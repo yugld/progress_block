@@ -10,7 +10,7 @@
   <div class="progress-block">
     <h2 class="progress-title">Progress</h2>
 
-    <div class="progress-svg">
+    <div class="progress-svg"> 
       <svg width="120" height="120">
         <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
         <circle class="circle-line" cx="60" cy="60" r="54"></circle>
@@ -21,13 +21,13 @@
       <div class="controls-group">
 
         <div class="control-item">
-          <input class="control-input" type="number" min="0" max="100" value="60">
+          <input id="controlInput" class="control-input" type="number" min="0" max="100" value="20">
           <span class="control-label">Value</span>
         </div>
 
         <div class="control-item">
           <label class="switch-label">
-            <input type="checkbox" />
+            <input id="animateToggle" type="checkbox" />
             <span class="switch-slider"></span>
           </label>
           <span class="control-label">Animate</span>
@@ -35,7 +35,7 @@
 
         <div class="control-item">
           <label class="switch-label">
-            <input type="checkbox" />
+            <input id="hideToggle" type="checkbox" />
             <span class="switch-slider"></span>
           </label>
           <span class="control-label">Hide</span>
@@ -43,7 +43,8 @@
 
       </div>
     </div>
-  </div>  
-
+  </div>
+  
+  <script type="module" src="index.js"></script>
 </body>
 </html>
