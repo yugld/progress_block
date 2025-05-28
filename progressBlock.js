@@ -10,7 +10,8 @@ export class ProgressBlock {
         this.circleProgress.style.strokeDashoffset = this.circumference;
     }
 
-    setValue(value) {
+    setValue(rawValue) {
+        const value = this._setLimit(rawValue, 0, 100);
         const offset = this.circumference - (value / 100) * this.circumference;
         this.circleProgress.style.strokeDashoffset = offset;
     }
@@ -35,5 +36,9 @@ export class ProgressBlock {
         if (typeof value === "number") this.setValue(value);
         if (typeof animated === "boolean") this.setAnimated(animated);
         if (typeof hidden === "boolean") this.setHidden(hidden);
+    }
+
+    _setLimit(val, min, max) {
+        return Math.min(Math.max(val, min), max);
     }
 }
