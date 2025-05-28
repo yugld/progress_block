@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/index.css" />
+  <title>Progress Block</title>
+</head>
+<body>
+  <div class="progress-block">
+    <h2 class="progress-title">Progress</h2>
+
+    <div class="progress-svg">
+      <svg width="120" height="120">
+        <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+        <circle class="circle-line" cx="60" cy="60" r="54"></circle>
+      </svg>
+    </div>
+
+    <div class="controls">
+      <div class="controls-group">
+
+        <div class="control-item">
+          <input class="control-input" type="number" min="0" max="100" value="60">
+          <span class="control-label">Value</span>
+        </div>
+
+        <div class="control-item">
+          <label class="switch-label">
+            <input type="checkbox" />
+            <span class="switch-slider"></span>
+          </label>
+          <span class="control-label">Animate</span>
+        </div>
+
+        <div class="control-item">
+          <label class="switch-label">
+            <input type="checkbox" />
+            <span class="switch-slider"></span>
+          </label>
+          <span class="control-label">Hide</span>
+        </div>
+
+      </div>
+    </div>
+  </div>  
+
+</body>
+</html>

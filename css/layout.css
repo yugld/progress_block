@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #eaf0f5;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.progress-block {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 568px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+}
+
+@media (orientation: landscape) {
+    .progress-block {
+        flex-direction: row;
+        width: 568px;
+        height: 320px;
+    }
+}
+
+.progress-title {
+    align-self: flex-start;
+    font-size: 16px;
+    font-weight: 500;
+}

@@ -1,0 +1,23 @@
+.progress-svg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.circle-bg {
+    position: absolute;
+    fill: none;
+    stroke: #eaf0f5;
+    stroke-width: 8;
+}
+
+.circle-line {
+    fill: none;
+    stroke: #0076ff;
+    stroke-width: 8;
+    transition: stroke-dashoffset 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
