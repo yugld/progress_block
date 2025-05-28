@@ -29,6 +29,15 @@
     padding: 5px;
 }
 
+.control-input:hover,
+.control-input:focus {
+    border-color: #0076ff;
+    transition: all 0.3s ease;
+}
+.control-input:focus {
+    outline: none;
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -91,6 +100,18 @@ input[type="number"] {
     transform: translateX(18px);
 }
 
+.switch-label:hover .switch-slider {
+    background-color: #d0e4fb;
+}
+
+.switch-label:active .switch-slider::before {
+    transform: scale(0.95);
+}
+.switch-slider,
+.switch-slider::before {
+    transition: all 0.3s ease;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(-90deg);
@@ -104,13 +125,14 @@ input[type="number"] {
     animation: rotate 2s linear infinite;
     transform-origin: center;
 }
-.progress-svg.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+
 .progress-svg {
     visibility: visible;
     opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.progress-svg.hidden {
+    visibility: hidden;
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
