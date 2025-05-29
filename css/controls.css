@@ -3,14 +3,23 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 30px;
     align-items: center;
+}
+
+@media (orientation: landscape) {
+    .controls {
+        justify-content: center;
+        margin-top: 0;
+        width: 50%;
+    }
 }
 
 .controls-group {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .control-item {
