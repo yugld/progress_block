@@ -19,7 +19,7 @@
 .controls-group {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .control-item {
@@ -131,8 +131,11 @@ input[type="number"] {
 }
 
 .rotating {
-    animation: rotate 2s linear infinite;
+    animation-name: rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
     transform-origin: center;
+    animation-duration: var(--rotation-duration, 2s);
 }
 
 .progress-svg {
@@ -144,4 +147,26 @@ input[type="number"] {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+.additional-controls {
+    display: none;
+    margin-top: 0;
+}
+.additional-controls.expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.add-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    color: #0076ff;
+    background-color: #fff;
+    font-size: 16px;
 }

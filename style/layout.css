@@ -12,10 +12,11 @@ body {
     flex-direction: column;
     width: 320px;
     height: 568px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background: #fff;
+    position: relative;
 }
 
 @media (orientation: landscape) {
