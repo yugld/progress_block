@@ -1,14 +1,14 @@
 export class ProgressBlock {
-    constructor(container) {
-        this.container = container;
-        this.circleProgress = container.querySelector(".circle-line");
-        this.svg = container.querySelector(".progress-svg");
-        this.valueDisplay = this.svg.querySelector(".progress-value-display");
-        if (!this.valueDisplay) {
-            this.valueDisplay = document.createElement("div");
-            this.valueDisplay.className = "progress-value-display";
-            this.svg.appendChild(this.valueDisplay);
+    // Принимает объект опций
+    constructor({ circleElement, wrapperElement, displayElement }) {
+        if (!circleElement || !wrapperElement) {
+            throw new Error(
+                "Элементы circleElement и wrapperElement  обязательны для создания экземпляра класса ProgressBlock"
+            );
         }
+        this.circleProgress = circleElement;
+        this.svg = wrapperElement;
+        this.valueDisplay = displayElement || null;
         this.radius = this.circleProgress.r.baseVal.value;
         this.circumference = 2 * Math.PI * this.radius;
         this.circleProgress.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
@@ -22,11 +22,15 @@ export class ProgressBlock {
     }
 
     setDisplayValueVisible(visible) {
-        this.valueDisplay.style.display = visible ? "flex" : "none";
+        if (this.valueDisplay) {
+            this.valueDisplay.style.display = visible ? "flex" : "none";
+        }
     }
 
     setDisplayValue(value) {
-        this.valueDisplay.textContent = `${Math.round(value)}%`;
+        if (this.valueDisplay) {
+            this.valueDisplay.textContent = `${Math.round(value)}%`;
+        }
     }
 
     setValue(rawValue) {
