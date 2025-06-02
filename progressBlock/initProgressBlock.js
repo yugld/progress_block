@@ -51,7 +51,7 @@ export function initProgressBlock(mountPoint) {
     });
 
     inputValue.addEventListener("input", () => {
-        progress.setValue(Number(inputValue.value));
+        progress.setValidInputValue(inputValue);
     });
 
     animateToggle.addEventListener("change", () => {

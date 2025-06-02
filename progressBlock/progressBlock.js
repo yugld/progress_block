@@ -59,4 +59,14 @@ export class ProgressBlock {
         if (typeof animated === "boolean") this.setAnimated(animated);
         if (typeof hidden === "boolean") this.setHidden(hidden);
     }
+
+    setValidInputValue(inputElement) {
+        let raw = inputElement.value;
+        raw = raw.replace(/^0+(?=\d)/, "");
+        let value = Number(raw);
+        if (isNaN(value) || value < 0) value = 0;
+        if (value > 100) value = 100;
+        inputElement.value = value;
+        this.setValue(value);
+    }
 }
